@@ -3,6 +3,9 @@ services:
   spring-boot-openjdk:
     image: "spring-boot-openjdk"
     container_name: spring-boot-openjdk
+  spring-boot-openj9:
+    image: "spring-boot-openj9"
+    container_name: spring-boot-openj9
   spring-boot-oraclejdk:
     image: "spring-boot-oraclejdk"
     container_name: spring-boot-oraclejdk
@@ -17,6 +20,7 @@ services:
     depends_on:
     - "spring-boot-oraclejdk"
     - "spring-boot-openjdk"
+    - "spring-boot-openj9"
     - "spring-boot-zulu"
     - "spring-boot-graalvmce"
     ports:
@@ -28,6 +32,7 @@ services:
     depends_on:
     - "spring-boot-openjdk"
     - "spring-boot-oraclejdk"
+    - "spring-boot-openj9"
     - "spring-boot-zulu"
     - "spring-boot-graalvmce"
     image: "prom/prometheus"

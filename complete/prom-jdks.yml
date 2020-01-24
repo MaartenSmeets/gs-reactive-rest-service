@@ -23,6 +23,11 @@ scrape_configs:
     metrics_path: '/actuator/prometheus'
     static_configs:
     - targets: ['spring-boot-openjdk:8080']
+  - job_name: 'spring-boot-openj9'
+    scrape_interval: 5s
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+    - targets: ['spring-boot-openj9:8080']
   - job_name: 'prometheus'
     scrape_interval: 5s
     static_configs:
